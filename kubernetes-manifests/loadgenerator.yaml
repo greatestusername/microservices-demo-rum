@@ -29,7 +29,7 @@ spec:
     spec:
       tolerations:
       nodeSelector:
-      terminationGracePeriodSeconds: 5
+      terminationGracePeriodSeconds: 20
       restartPolicy: Always
       containers:
       - name: main

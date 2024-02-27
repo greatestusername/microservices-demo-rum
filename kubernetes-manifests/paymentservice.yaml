@@ -27,7 +27,7 @@ spec:
     spec:
       tolerations:
       nodeSelector:
-      terminationGracePeriodSeconds: 5
+      terminationGracePeriodSeconds: 15
       containers:
       - name: server
         image: paymentservice
@@ -53,9 +53,11 @@ spec:
         - name: ERROR_PAYMENT_SERVICE_DURATION_MILLIS
           value: "500"
         readinessProbe:
+          periodSeconds: 35
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
         livenessProbe:
+          periodSeconds: 35
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
         resources:
