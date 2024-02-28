@@ -27,7 +27,7 @@ spec:
     spec:
       tolerations:
       nodeSelector:
-      terminationGracePeriodSeconds: 5
+      terminationGracePeriodSeconds: 15
       containers:
       - name: server
         image: recommendationservice
