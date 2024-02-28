@@ -44,7 +44,7 @@ build:
   tagPolicy:
     gitCommit: {}
 deploy:
-  statusCheckDeadlineSeconds: 1200
+  statusCheckDeadlineSeconds: 900
   kubectl:
     manifests:
       - ./kubernetes-manifests/adservice.yaml

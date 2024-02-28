@@ -57,12 +57,12 @@ spec:
               cpu: 200m
               memory: 300Mi
           readinessProbe:
-            initialDelaySeconds: 60
+            initialDelaySeconds: 90
             periodSeconds: 25
             exec:
               command: ['/bin/grpc_health_probe', '-addr=:9555']
           livenessProbe:
-            initialDelaySeconds: 60
+            initialDelaySeconds: 90
             periodSeconds: 30
             exec:
               command: ['/bin/grpc_health_probe', '-addr=:9555']

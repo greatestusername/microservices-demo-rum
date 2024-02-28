@@ -45,10 +45,12 @@ spec:
           # value: "http://zipkin.default:9411/api/v2/spans"
           value: "http://$(NODE_IP):9411/api/v2/spans"
         readinessProbe:
+          initialDelaySeconds: 10
           periodSeconds: 5
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:8080"]
         livenessProbe:
+          initialDelaySeconds: 10
           periodSeconds: 5
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:8080"]

@@ -53,9 +53,11 @@ spec:
         - name: ERROR_PAYMENT_SERVICE_DURATION_MILLIS
           value: "500"
         readinessProbe:
+          initialDelaySeconds: 10
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
         livenessProbe:
+          initialDelaySeconds: 10
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
         resources:
